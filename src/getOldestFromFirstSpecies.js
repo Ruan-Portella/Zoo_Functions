@@ -1,8 +1,8 @@
 const data = require('../data/zoo_data');
 
 const getOldestFromFirstSpecies = (id) => {
-  const getIdType = data.employees.find((employee) => employee.id === id);
-  const newd = data.species.find((animal) => animal.id === getIdType.responsibleFor[0]).residents
+  const getId = data.employees.find((employee) => employee.id === id);
+  const newd = data.species.find((animal) => animal.id === getId.responsibleFor[0]).residents
     .reduce((acc, curr) => {
       if (acc.age > curr.age) {
         return acc;
