@@ -24,6 +24,7 @@ const generos = Object.keys(week);
 for (let index = 0; index < generos.length - 1; index += 1) {
   week[generos[index]].officeHour = `Open from ${data.hours[generos[index]]
     .open}am until ${data.hours[generos[index]].close}pm`;
+
   data.species.forEach((specie) => {
     if (specie.availability.includes(generos[index])) {
       week[generos[index]].exhibition.push(specie.name);
