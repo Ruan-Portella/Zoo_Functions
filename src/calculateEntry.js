@@ -1,14 +1,13 @@
-const { species } = require('../data/zoo_data');
 const data = require('../data/zoo_data');
 
 const countEntrants = (entrants) => {
-  if (entrants) {
-    const child = entrants.filter((entrant) => entrant.age < 18).length;
-    const adult = entrants.filter((entrant) => entrant.age >= 18 && entrant.age < 50).length;
-    const senior = entrants.filter((entrant) => entrant.age >= 50).length;
-    return { child, adult, senior };
+  if (entrants !== undefined) {
+    const child1 = entrants.filter((entrant) => entrant.age < 18).length;
+    const adult1 = entrants.filter((entrant) => entrant.age >= 18 && entrant.age < 50).length;
+    const senior1 = entrants.filter((entrant) => entrant.age >= 50).length;
+    return { child: child1, adult: adult1, senior: senior1 };
   }
-  if (!entrants) {
+  if (entrants === undefined) {
     throw new Error('Numero de Pessoas errado!');
   }
 };

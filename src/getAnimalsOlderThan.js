@@ -5,5 +5,5 @@ const getAnimalsOlderThan = (animal, age) => {
   const age1 = animals2.residents.every((age2) => age2.age >= age);
   return age1;
 };
-getAnimalsOlderThan('otters', '7');
+console.log(getAnimalsOlderThan('otters', '7'));
 module.exports = getAnimalsOlderThan;
