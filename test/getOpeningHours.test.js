@@ -42,4 +42,12 @@ describe('Testes da função getOpeningHours', () => {
     const expected = 'The minutes should represent a number';
     expect(() => getOpeningHours('Sunday', '09:c0-AM')).toThrow(expected);
   });
+  it('teste 9', () => {
+    const expected = 'The hour must be between 0 and 12';
+    expect(() => getOpeningHours('Monday', '13:00-AM')).toThrow(expected);
+  });
+  it('teste 10', () => {
+    const expected = 'The minutes must be between 0 and 59';
+    expect(() => getOpeningHours('Tuesday', '09:60-AM')).toThrow(expected);
+  });
 });
