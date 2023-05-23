@@ -8,7 +8,8 @@ const object = (id) => {
     .find((na) => (na.firstName === id.name) || (na.lastName === id.name) || (na.id === id.id));
   for (let index = 0; index < employee.responsibleFor.length; index += 1) {
     const locations = data.species
-      .find((animal) => animal.id === employee.responsibleFor[index]).location;
+      .find((animal) => animal.id === employee.responsibleFor[0]).location;
+    console.log(locations);
     const species = data.species
       .find((animal) => animal.id === employee.responsibleFor[index]).name;
     loca.push(locations);
@@ -54,5 +55,7 @@ const getEmployeesCoverage = (id) => {
   }
   return object(employee);
 };
+
+console.log(getEmployeesCoverage({ id: 'c1f50212-35a6-4ecd-8223-f835538526c2' }));
 
 module.exports = getEmployeesCoverage;

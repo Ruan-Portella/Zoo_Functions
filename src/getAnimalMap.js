@@ -41,6 +41,7 @@ const noParameter = () => {
 
 const sex = (options) => {
   const newobj2 = data.species.reduce((acc, specie) => {
+    if (options.sorted === undefined)
     const nome = { [specie.name]: specie.residents.filter((animal) => animal.sex === options.sex)
       .map((animal2) => animal2.name) };
     if (!acc[specie.location]) {
@@ -91,5 +92,7 @@ const getAnimalMap = (options) => {
   }
   return all(options);
 };
+
+console.log(getAnimalMap({ includeNames: true }));
 
 module.exports = getAnimalMap;
